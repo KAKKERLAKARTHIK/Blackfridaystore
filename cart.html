@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+#cart1{
+    width: 100%;
+margin-top: 40px;
+margin-left: 29%;
+    border: 1px solid;
+border-radius: 10px;
+box-shadow: 0 0 10px 10px rgb(225, 222, 222);
+}
+img{
+    width: 50%;
+    height: 100px;
+    border-radius: 5px;
+    margin-left: 23%;
+    margin-top: 10px;
+}
+
+.main{
+     width: 100%; 
+    height: 100%;
+    display: grid;
+    grid-template-columns: 18% 18% 18% 18%;
+    
+    grid-column-gap: 5%;
+    grid-row-gap: 2%;
+}
+h1{
+    display: none;
+}
+
+</style>
+
+
+
+
+
+</head>
+<body>
+<button id="clear"> clear </button>
+<div class="main">
+
+</div>
+<h1> cart</h1>
+
+    <script>
+
+let value=JSON.parse(localStorage.getItem("cart"))
+
+
+value==null?[]:value;
+
+
+
+
+value.map((val,ind,arr)=>{
+
+let div=document.getElementsByTagName("div")
+
+let div1=document.createElement("div")
+let btn1=document.createElement("button")
+div1.appendChild(btn1)
+div1.setAttribute("id","cart1")
+div[0].appendChild(div1)
+div1.innerHTML=`
+<img src="${val.thumbnail}">
+<h2>${val.title}</h2>
+<h4>${val.description}</h4>
+<p>${val.price}</p>
+
+`
+let p=document.createElement("p")
+p.innerText=""
+let bb=document.createElement("button")
+bb.innerText="delete"
+div1.appendChild(bb)
+div1.appendChild(p)
+bb.addEventListener("click",()=>{
+    div[0].removeChild(div1)
+
+
+})
+})
+
+
+
+let btn=document.getElementById("clear")
+let h1=document.getElementsByTagName("h1")
+
+// btn.addEventListener("click",()=>{
+// h1[0].style.display="block"
+
+
+// })
+
+
+
+btn.addEventListener("click",()=>{
+
+
+localStorage.clear()
+
+})
+
+
+
+ 
+
+
+// let pre=document.getElementsByTagName("pre")
+// document.body.removeChild(pre[0])
+    </script>
+    
+</body>
+</html> 

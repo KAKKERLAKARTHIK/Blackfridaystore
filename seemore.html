@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: linear-gradient( rgb(138, 185, 185),grey);
+            background-size: cover;
+width: 100%;
+height: 100vh;
+        }
+        div{
+
+width: 300px;
+height: 400px;
+
+
+
+        }
+div img{
+width: 200px;
+margin-left: 15%;
+margin-top: 10px;
+
+}
+
+#main{
+  margin-left: 200%;  
+  margin-top:40% ;
+  border: 1px solid;
+  border-radius: 5%;
+  box-shadow: 0 0 10px 10px rgb(122, 118, 119);
+}
+
+    </style>
+</head>
+<body>
+
+
+
+<div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+    <script>
+
+let value=localStorage.getItem("seemore")
+value1=JSON.parse(value)
+
+console.log(value1);
+let div=document.getElementsByTagName("div")
+// let img=document.createElement("img")
+// img.setAttribute("src",value1.thumbnail)
+// div[0].appendChild(img)
+// let h2=document.createElement("h2")
+// h2.innerText=value1.title
+// div[0].appendChild(h2)
+// let h5=document.createElement("h5")
+// h5.innerText=value1.description
+// div[0].appendChild(h5)
+
+let div1=document.createElement("div")
+div1.setAttribute("id","main")
+div1.innerHTML=`<img src="${value1.thumbnail}">
+<center><h2>${value1.title}</h2>
+<h5>${value1.description}</h5>
+<h5> price:-  $${value1.price}</h5></center>
+<h6> stock available :- ${value1.stock}</h6>
+
+`
+
+div[0].appendChild(div1)
+    </script>
+</body>
+</html>
