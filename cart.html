@@ -33,7 +33,22 @@ img{
 h1{
     display: none;
 }
+h2{
+    margin-left: 10px;
+}
+h4{
+    margin-left: 10px;
+}
+p{
 
+    margin-left: 10px;
+}
+.but{
+    margin-left: 120px;
+}
+button{
+    margin-left: 15px;
+}
 </style>
 
 
@@ -71,12 +86,17 @@ div1.innerHTML=`
 <img src="${val.thumbnail}">
 <h2>${val.title}</h2>
 <h4>${val.description}</h4>
-<p>${val.price}</p>
+<p> price:- $ ${val.price}</p>
 
 `
+let btn3=document.createElement("button")
+btn3.innerText="buy now";
+
+div1.appendChild(btn3)
 let p=document.createElement("p")
 p.innerText=""
 let bb=document.createElement("button")
+bb.setAttribute("class","but")
 bb.innerText="delete"
 div1.appendChild(bb)
 div1.appendChild(p)
@@ -85,6 +105,18 @@ bb.addEventListener("click",()=>{
 
 
 })
+btn3.addEventListener("click",()=>{
+
+
+localStorage.setItem("buy",JSON.stringify(value[ind]))
+
+    })
+btn3.addEventListener("click",()=>{
+
+
+window.location.assign("./buy.html")
+
+    })
 })
 
 

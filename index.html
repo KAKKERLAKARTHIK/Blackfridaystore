@@ -85,6 +85,12 @@
         .price{
             margin-left: 10px;
         }
+        #seemore{
+            border-radius: 13px;
+        }
+        #btn1{
+            margin-left: 40px;
+        }
     </style>
 </head>
 
@@ -682,7 +688,7 @@ arr.map((val,ind,arr)=>{
     div1.style.margin="10px"
     div1.setAttribute("class","div1")
     console.log(val.thumbnail);
-div1.innerHTML=` <div>  </div>     
+div1.innerHTML=`  
 <img src="${val.thumbnail}"> 
 
 <center><h3 id="cat">${val.category}</h3></center>
@@ -691,8 +697,7 @@ div1.innerHTML=` <div>  </div>
  <p class="count">count :-  ${val.rating.count}</p>
  <h5 class="price">price    $${val.price}</h5>
   
-
- <button id="btn">buy now</button>
+ 
  `
 let btn=document.createElement("button")
 btn.setAttribute("id","seemore")
@@ -702,7 +707,10 @@ let btn1=document.createElement("button")
 btn1.setAttribute("id","btn1")
 btn1.innerText="add to cart"
 div1.appendChild(btn1)
-
+let btn2=document.createElement("button")
+btn2.setAttribute("id","btn")
+btn2.innerText="buy now"
+div1.appendChild(btn2)
 
 div[0].appendChild(div1)
 
@@ -744,22 +752,20 @@ window.location.assign("cart.html")
 
 })
 
+btn2.addEventListener("click",()=>{
+
+localStorage.setItem("buy",JSON.stringify(arr[ind]))
+
+})
 
 
 
 
+btn2.addEventListener("click",()=>{
+window.location.assign("buy.html")
+})
 
 
-
-
-
-
-// btn1.addEventListener("click",()=>{
-
-// location.assign("./cart.html")
-
-
-// })
 
 
 

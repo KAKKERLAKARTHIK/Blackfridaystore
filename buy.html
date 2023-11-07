@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: linear-gradient( rgb(235, 241, 241),rgb(108, 212, 212));
+            background-size: cover;
+width: 100%;
+height: 190vh;
+        }
+        div{
+
+width: 300px;
+height: 400px;
+
+
+        }
+div img{
+width: 200px;
+margin-left: 15%;
+margin-top: 10px;
+
+}
+
+#main{
+  margin-left: 30%;  
+  position: relative;
+  top: 20px;
+  border: 1px solid;
+  border-radius: 5%;
+  box-shadow: 0 0 10px 10px rgb(122, 118, 119);
+}
+#pay{
+    margin-left: 32%;
+    margin-top: 30%;
+
+}
+.add{
+    position: relative;
+    left: 40%;
+    top: -28%;
+}
+input{
+    margin-top: 10px;
+}
+#buy{
+    position: relative;
+    left: 40%;
+    top: -34%;
+}
+    </style>
+</head>
+<body>
+
+
+
+<div>
+
+
+
+
+
+
+</div>
+
+ <div class="add">
+
+<h4>Enter delivery address</h4>
+<label for="text">enter name:</label>
+&nbsp;<input type="text"><br>
+<label for="text">street name:</label>&nbsp;<input type="text"><br>
+<label for="text"> area name:</label>
+&nbsp;&nbsp;<input type="text"><br>
+
+<label for="text">dist name:</label>
+&nbsp;&nbsp;&nbsp;<input type="text"><br>
+<label for="number">pin code:</label>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="number"><br>
+<label for="number">Mblnum:</label>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="number">
+ </div>
+
+<button id="buy">continue to buy</button>
+
+
+
+
+
+    <script>
+
+let value=localStorage.getItem("buy")
+value1=JSON.parse(value)
+
+console.log(value1);
+let div=document.getElementsByTagName("div")
+ 
+
+let div1=document.createElement("div")
+div1.setAttribute("id","main")
+div1.innerHTML=`<img src="${value1.thumbnail}">
+<center><h2>${value1.title}</h2>
+<h5>${value1.description}</h5>
+<h5> price:-  $${value1.price}</h5></center>
+
+`
+ 
+
+let div2=document.createElement("div")
+div2.setAttribute("id","pay")
+div2.innerHTML=`<h3>payment options</h3>
+<input type="radio" title="credit card" id="credit" name="radio">
+<lable for="credit card" id="creit" name="radio">Creditcard</lable><br>
+<input type="radio" title="credit card" id="credit" name="radio">
+<lable for="credit card" id="creit" name="radio">Debit card</lable><br>
+<input type="radio" title="credit card" id="credit" name="radio">
+<lable for="credit card" id="creit" name="radio">EMI</lable><br>
+<input type="radio" title="credit card" id="credit" name="radio">
+<lable for="credit card" id="creit" name="radio">Cash on delivery</lable>
+<h2>Available offers</h2>
+
+<p>Bank Offer10% Instant Discount on SBI Credit Card Txns, up to ₹1000, on orders of ₹5,000 and aboveT&C</p>
+
+<p>Bank Offer10% Instant Discount on SBI Credit Card EMI Txns, up to ₹1500, on orders of ₹5,000 and aboveT&C</p>
+
+<p>Bank OfferGet 10% Cashback on Samsung Axis bank Credit CardT&C</p>
+
+<p>Special PriceGet extra ₹46000 off (price inclusive of cashback/coupon)T&C</p>
+
+<p>FreebieSpotify Premium - 12M at ₹699T&C</p>
+
+<p>Partner OfferSign-up for Flipkart Pay Later & get free Times Prime Benefits worth ₹20,000*Know More</p>
+
+<p>No cost EMI ₹4,445/month. Standard EMI also availableView Plans</p>
+
+<p>Buy Samsung phone & get extra 5% off on Mi PowerbanksT&C</p>
+
+<p>Buy Samsung Phone & get extra 5% off PowerbankT&C</p>
+
+<p>Bank Offer5% Cashback on Flipkart Axis Bank CardT&C</p>
+`
+
+
+let but=document.getElementById("buy")
+but.addEventListener("click",()=>{
+window.location.assign("order.html")
+
+
+})
+
+
+div[0].appendChild(div1)
+div[0].appendChild(div2)
+    </script>
+</body>
+</html>
