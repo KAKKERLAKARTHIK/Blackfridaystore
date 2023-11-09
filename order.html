@@ -11,6 +11,11 @@
             width: 100%;
             height: 92vh;
         }
+        button{
+            padding: 10px;
+            border: 0px solid;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -22,6 +27,14 @@
         Your item will be delivred in 4-7 working days to given address
     </h3>
     <h3>Thank you</h3>
+    <button> continue shopping</button>
 </center>
+<script>
+let btn=document.getElementsByTagName("button")
+btn[0].addEventListener("click",()=>{
+    window.location.assign("./alll.html")
+})
+
+</script>
 </body>
 </html>
