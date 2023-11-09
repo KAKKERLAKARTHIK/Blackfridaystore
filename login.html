@@ -13,21 +13,20 @@
 width: 100%;
 height: 100vh;
 
-/* background-image: linear-gradient(to right,rgb(17, 213, 213),rgb(143, 143, 243),rgb(234, 83, 196)); */
-background-image: url(./gifts-golden-shopping-cart-with-copy-space.jpg); 
+/*background-image: linear-gradient(to right,rgb(17, 213, 213),rgb(143, 143, 243),rgb(234, 83, 196)); */
+background-image: url(./arrangement-black-friday-shopping-carts-with-copy-space.jpg);
 background-size: cover;
- 
 }
 .log{
 background-color: white;
     width:25% ;
-    height: 80vh;
+    height: 70vh;
     margin-left: 37%;
     
 }
 .input4{
     margin-left: 37px;
-    margin-top: 8%;
+    margin-top: 10%;
     padding: 10px;
     width: 70%;
     border: 0px;
@@ -36,7 +35,7 @@ background-color: white;
 .p1{
     font-size: 18px;
     position: relative;
-    top: 8%;
+    top: 10%;
     left: 9%;
 }
 .input1{
@@ -45,98 +44,59 @@ background-color: white;
     border: 0px;
     border-bottom: 1px solid gray;
 margin-left: 37px;
-margin-top: px;
+margin-top: 10px;
 }
 .p2{
     font-size: 18px;
     position: relative;
     left: 9%;
-    top: 2%;
+    top: 3%;
 }
 h1{
     position: relative;
-    left:38% ;
+    left:40% ;
     top: 5%;
 }.sub{
     position: relative;
-    top: 3%;
+    top: 8%;
     padding: 12px;
     width: 76%;
     left: 37px;
     /* background-image: linear-gradient(to right,rgb(17, 213, 213),rgb(143, 143, 243),rgb(234, 83, 196)); */
-    background-color: grey;
+  background-color: gray;
+    background-size: cover;
 border: .2px;
 border-radius: 10px;
 }
 .p3{
-    margin-top: 7%;
+    margin-top: 18%;
     font-size: 19px;
-    margin-left: 10%;
-
+    margin-left: 40%;
 }.log{
     position: relative;
-    top: 75px;
-    margin-left: 54%;
-}
-.input2{
-
-    padding: 10px;
-    width: 70%;
-    border: 0px;
-    border-bottom: 1px solid gray;
-margin-left: 37px;
-margin-top: -20px;
-}
-.but{
-    position: relative;
-    top: 6%;
-    padding: 12px;
-    width: 76%;
-    left: 37px;
-    /* background-image: linear-gradient(to right,rgb(17, 213, 213),rgb(143, 143, 243),rgb(234, 83, 196)); */
-    background-color: grey;
-border: .2px;
-border-radius: 10px;
-
-}
-.p4{
-    font-size: 19px;
-    margin-top: 12%;
-    margin-left: 40%;
-}
-.error{
+    top: 100px;
+}small{
+    font-size: 15px;
     color: red;
     margin-left: 10%;
-display: none;
+    display: none;
 }
-img{
-    position: relative;
-    top: 0;
-    left: 47%;
-    width: 200px;
-    height: 100px;
-    
-}
+
     </style>
 </head>
 
 <body>
-
 <div class="main">
     <div>
-        <!-- <img src="./Screenshot_2023-11-09_130503-removebg.png" alt=""> -->
         <form action="" class="log">
-            <h1>Register</h1>
+            <h1>Log in</h1>
             <p class="p1">username</p>
             <input type="text" name="username" class="input4" placeholder="enter username"><br>
             <p class="p2">password</p>
-            <input type="password" name="password" class="input1" placeholder="enter password"><br>
-            <p class="p3">confirm password</p>
-            <input type="password" name="password" class="input2" placeholder="enter password"><br>
-            <small class="error"> enter password correct</small>
+            <input type="text" name="password" class="input1" placeholder="enter password"><br>
+            <small> username or password not correcr</small>
             <input type="submit" class="sub"> 
-            <button class="but">Log in</button>
-            <p class="p4">log in with</p>
+            <p class="p3">log in with</p>
             <span style=" font-size: 1.6em; margin-left: 26%;margin-top: 20px; color: #9e8c8c;" class="social1"> <a
                 href="https://www.facebook.com/kakkerla.karthik.9"><i
                     class="fab fa-facebook-f"></i></a>&nbsp;&nbsp;&nbsp;
@@ -150,38 +110,30 @@ img{
     </div>
 </div>
     <script>
- let sub=document.getElementsByTagName("button")
-sub[0].addEventListener("click",()=>{
 
-window.location.assign("./login.html")
-})
-
-
-
-
-
-
-let forms=document.forms
-console.log(forms[0]);
-let storing=[];
-forms[0].addEventListener("submit",(e)=>{
-    e.preventDefault()
+let form = document.forms
+form[0].addEventListener("submit",(e)=>{
+e.preventDefault()
 let username=e.target[0].value
 let password=e.target[1].value
-let cpassword=e.target[2].value
-if(username.match(/[a-z]{6,24}/)&& password.match(/[0-9]{8,14}/)&&password==cpassword ){
-storing.push({username:username,password:password})
-console.log("click");
-localStorage.setItem("storing",JSON.stringify(storing))
-alert("your registred sucessfully please log in ")
-}
-else{
-    let small=document.getElementsByTagName("small")
-    small[0].style.display="block"
-}
-
-
+let details=JSON.parse(localStorage.getItem("storing"))
+let check=details.find((a)=>{
+    return a.username==username && a.password==password
 })
+if(check){
+    window.location.assign("./alll.html")
+}else{
+  let small=document.getElementsByTagName("small")
+  small[0].style.display="block"
+}
+})
+
+
+
+
+
+
+
 
 
 

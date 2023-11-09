@@ -49,6 +49,33 @@ p{
 button{
     margin-left: 15px;
 }
+body{
+    background-color: rgb(254, 205, 213);
+}
+#cart1{
+    background-color: white;
+}
+#clear{
+    padding: 10px;
+    width: 90px;
+    border: 0px solid;
+    border-radius: 10px;
+    margin-left: 90%;
+}
+.but{
+    padding: 8px;
+    background-color: pink;
+    border: 0px solid;
+    width: 60px;
+    border-radius: 10px;
+}
+.bu{
+    padding: 7px;
+    background-color: pink;
+    border: 0px solid;
+    
+    border-radius: 10px;
+}
 </style>
 
 
@@ -91,7 +118,7 @@ div1.innerHTML=`
 `
 let btn3=document.createElement("button")
 btn3.innerText="buy now";
-
+btn3.setAttribute("class","bu")
 div1.appendChild(btn3)
 let p=document.createElement("p")
 p.innerText=""
